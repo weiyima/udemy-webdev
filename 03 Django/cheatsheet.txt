@@ -1,0 +1,60 @@
+#1.Create Virtual Environment
+
+$ cd my-project/
+$ virtualenv env
+
+#2. Inherit globally installed packages
+$ virtualenv env --system-site-packages
+
+#3. Activate it (skip here next time when env is created)
+$ source env/bin/activate
+
+#3b. Install Django-Rest-Framework
+pip install django
+pip install djangorestframework
+pip install pygments  # We'll be using this for the code highlighting
+
+#4. To leave it
+$ deactivate
+
+Note, any pip install will only be within the virtual environment
+
+
+#5. Django - create project
+$ django-admin startproject helloworld
+
+#6. Django - run server
+$ python manage.py runserver
+
+#7. Django - migrate
+python manage.py migrate
+python manage.py runserver
+python manage.py createsuperuser --username=root --email=
+
+#pw = password
+
+#8. Django - create an app "blog"
+python manage.py startapp blog
+
+#9. Define the data models, create serializers.py, create views
+
+#10. Django - prepare migration of model + create table in SQL
+$ python manage.py makemigrations blog
+$ python manage.py migrate
+
+#9 Add 'rest_framework' to your INSTALLED_APPS setting.
+INSTALLED_APPS = (
+    ...
+    'rest_framework',
+)
+
+
+###########
+
+pip install -r requirements.txt
+
+##########
+
+
+
+
